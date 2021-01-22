@@ -1,7 +1,6 @@
 #!/bin/bash
 
 OPENCV_VERSION=4.5.0
-CUDA_ARCH_BIN=7.2
 
 apt-get -y install --no-install-recommends \
 build-essential \
@@ -49,6 +48,7 @@ libfreetype6-dev \
 mesa-va-drivers \
 mesa-vdpau-drivers
 
+cd ~/
 curl -L https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -o opencv-${OPENCV_VERSION}.zip
 curl -L https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -o opencv_contrib-${OPENCV_VERSION}.zip
 unzip opencv-${OPENCV_VERSION}.zip
@@ -64,7 +64,7 @@ cmake \
 -D CMAKE_INSTALL_PREFIX=/usr/local \
 -D WITH_CUDA=OFF \
 -D WITH_CUBLAS=OFF \
--D WITH_LIBV4L=ON \
+-D WITH_LIBV4L=OFF \
 -D BUILD_opencv_python3=ON \
 -D BUILD_opencv_python2=OFF \
 -D BUILD_opencv_java=OFF \
@@ -73,12 +73,14 @@ cmake \
 -D BUILD_TESTS=OFF \
 -D BUILD_PERF_TESTS=OFF \
 -D BUILD_EXAMPLES=OFF \
--D OPENCV_ENABLE_NONFREE=ON \
--D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-${OPENCV_VERSION}/modules \
+-D OPENCV_ENABLE_NONFREE=OFF \
+-D OPENCV_EXTRA_MODULES_PATH= ~/opencv_contrib-${OPENCV_VERSION}/modules \
 ..
 
 make package -j$(nproc)
 make install
 ldconfig
+
+cd
 
 

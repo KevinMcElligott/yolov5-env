@@ -10,9 +10,9 @@ COPY download_yolov5.sh download_yolov5.sh
 
 RUN apt-get update &&\
 apt-get -y upgrade &&\
-pip3 install -r requirements.txt &&\
 ./install_opencv.sh &&\
 ./download_yolov5.sh &&\
+pip3 install -r requirements.txt &&\
 rm requirements.txt install_opencv.sh download_yolov5.sh
 
 WORKDIR /usr/src/app
