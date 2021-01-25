@@ -3,6 +3,6 @@ version: "3.3"
 services:
     yolov5-env:
         build: .
-        image: yolov5-env-image
+        image: yolov5-env-image:1.0
         container_name: yolov5-env-container
 
