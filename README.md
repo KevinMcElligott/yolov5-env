@@ -1,3 +1,8 @@
+# Requirements for running yolov5-en docker container
+
+- Jetson Xavier AGX
+- Jetpack version 4.4.1
+
 # To create the docker yolov5-env image
 
 ```bash
