@@ -1,4 +1,4 @@
-# Requirements for running yolov5-en docker container
+# Requirements for running yolov5-3.1
 
 - Jetson Xavier AGX
 - Jetpack version 4.4.1
