@@ -14,7 +14,7 @@ sudo docker run -it --rm --runtime nvidia --network host --ipc=host yolov5-env-i
 Run docker container with shared volume:
 
 ```bash
-sudo docker run -it --rm --runtime nvidia --network host --ipc=host -v /mnt/XavierSSD/<FOLDER_NAME>:/usr/src/app  yolov5-env-image:1.0
+sudo docker run -it --rm --runtime nvidia --network host --ipc=host -v /mnt/XavierSSD/<FOLDER_NAME>:/usr/src/app/<FOLDER_NAME>  yolov5-env-image:1.0
 ```
 # To delete a container
 
