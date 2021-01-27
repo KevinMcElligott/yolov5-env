@@ -1,3 +1,12 @@
+# Requirements for running yolov5-3.1
+
+- Jetson Xavier AGX
+- Jetpack version 4.4.1
+
+# Yolov5 version
+
+On the Jetson Xavier (aarch64) it is not possible to use the latest yolov5 due to the required python packages. The latest yolov5 that can satisfy all python requirements for yolov5 is version 3.1. Note that this might change in the near future.
+
 # To create the docker yolov5-env image
 
 ```bash
